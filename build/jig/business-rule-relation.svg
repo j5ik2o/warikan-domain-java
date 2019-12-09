@@ -1,0 +1,19 @@
+<svg width="232px" height="136px"
+ viewBox="0.00 0.00 231.84 135.82" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform=" rotate(0) translate(4 131.8201)">
+<title>%3</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-131.8201 227.8442,-131.8201 227.8442,4 -4,4"/>
+<text text-anchor="middle" x="111.9221" y="-15.62" font-family="Times,serif" font-size="14.00" fill="#000000">ビジネスルール関連図 [2019.12.1]</text>
+<g id="clust1" class="cluster">
+<title>cluster_warikan.domain.model</title>
+<polygon fill="#fffacd" stroke="#eedd82" stroke-width="2" points="39.4221,-38.82 39.4221,-119.8201 184.4221,-119.8201 184.4221,-38.82 39.4221,-38.82"/>
+<text text-anchor="middle" x="111.9221" y="-104.6201" font-family="Times,serif" font-size="14.00" fill="#000000">warikan.domain.model</text>
+</g>
+<!-- warikan.domain.model.Money -->
+<g id="node1" class="node">
+<title>warikan.domain.model.Money</title>
+<polygon fill="#eedd82" stroke="#000000" points="139.0852,-89.8201 83.759,-89.8201 83.759,-46.82 139.0852,-46.82 139.0852,-89.8201"/>
+<text text-anchor="middle" x="111.4221" y="-74.6201" font-family="Times,serif" font-size="14.00" fill="#000000">通貨</text>
+<text text-anchor="middle" x="111.4221" y="-53.62" font-family="Times,serif" font-size="14.00" fill="#000000">Money</text>
+</g>
+</g>
+</svg>

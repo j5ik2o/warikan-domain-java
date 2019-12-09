@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    id "org.dddjava.jig-gradle-plugin" version "2019.12.1"
+    id "com.diffplug.gradle.spotless" version "3.13.0"
+}
+
+group 'com.github.warikan'
+version '1.0.0-SNAPSHOT'
+
+sourceCompatibility = 10
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile "io.vavr:vavr:0.9.3"
+
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+
+    // https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305
+    compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.29'
+
+    // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+
+    testCompile (group: 'junit', name: 'junit', version: '4.12') {
+        // これで hamcrest-core の依存を除外する
+        exclude module: 'hamcrest-core'
+    }
+
+    testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '2.1'
+    testCompile group: 'org.hamcrest', name: 'hamcrest-library', version: '2.1'
+}
+
+spotless {
+    java {
+        googleJavaFormat()
+    }
+}
+
+jigReports.dependsOn 'compileJava'
+compileJava.dependsOn 'spotlessApply'
