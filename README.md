@@ -71,6 +71,9 @@
     - 上記で決めた概念名を持つ、具体的な型を定義する。型はクラスでもインターフェイスでもOK
     - プロパティだけではなく、メソッドも仮で定義する
     - 細かい実装は後回し。`return null;` or `throw new NotImplementedException();`などを使うとよい
+- ビルドとJIGの利用
+    - `$ ./gradlew build`でビルドできます。
+    - `$ ./gradlew jigReports`でJIGのレポートを出力できます。
 
 ## ドメインオブジェクトを改善する(45分)
 
