@@ -73,7 +73,7 @@
     - 細かい実装は後回し。`return null;` or `throw new NotImplementedException();`などを使うとよい
 - ビルドとJIGの利用
     - `$ ./gradlew build`でビルドできます。
-    - `$ ./gradlew jigReports`でJIGのレポートを出力できます。
+    - `$ ./gradlew jigReports`で[JIG](https://github.com/dddjava/jig)のレポートを出力できます。
 
 ## ドメインオブジェクトを改善する(45分)
 
