@@ -76,6 +76,8 @@
     - 上記で決めた概念名を持つ、具体的な型を定義する。型はクラスでもインターフェイスでもOK
     - プロパティだけではなく、メソッドも仮で定義する
     - 細かい実装は後回し。`return null;` or `throw new NotImplementedException();`などを使うとよい
+    - Tell Don't Ask(求めるな 命じよ)を厳守
+        - ある処理をする際、その処理に必要な情報をオブジェクトから引き出さないで、情報を持ったオブジェクトに処理を命令すること
 - ビルドとJIGの利用
     - `$ ./gradlew build`でビルドできます。
     - `$ ./gradlew jigReports`で[JIG](https://github.com/dddjava/jig)のレポートを出力できます。
