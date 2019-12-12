@@ -103,6 +103,7 @@ public class Members {
   }
 }
 ```
+
     - Tell Don't Ask(求めるな 命じよ)を厳守
         - ある処理をする際、その処理に必要な情報をオブジェクトから引き出さないで、情報を持ったオブジェクトに処理を命令すること
         - `var result = members.values().filter(Member::isSecretary).toList();`は内部データを求めている。そうではなく`var result = members.secretaries();`のようにオブジェクトに命じること
