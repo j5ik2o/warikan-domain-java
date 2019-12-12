@@ -97,10 +97,10 @@
                     this.values = new ArrayList<>(values);
                 }
                 // (2)型の制約。例外はない。コンパイルできないだけ
-                public Members(Member head, List<Member> tail) {
+                public Members(Member head, Member... tail) {
                     values = new ArrayList<>();
                     values.add(head);
-                    values.addAll(tail);
+                    values.addAll(Arrays.asList(tail));
                 }
             }
             ```
