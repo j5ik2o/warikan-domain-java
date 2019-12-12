@@ -3,7 +3,7 @@
 ## 成果物
 
 - チームで設計に合意すること
-- SNSでの共有は ハッシュタグ #WarikanModeling で
+- SNSでの共有は ハッシュタグ [#WarikanModeling](https://twitter.com/search?q=%23WarikanModeling&src=typed_query) で
 
 ## 副産物
 
