@@ -144,7 +144,26 @@
                 }
             }
             ```
+
+    - 誤りやすく安全ではない可変クラスではなく、不変(Immutable)クラスを採用する
+    
+        ```java
+        // 可変クラス
+        public final Members {
+            private List<Member> values;
             
+            // 可変メソッド
+            public Members add(Member other) {
+                // 可変リストなので相手に渡しても害がないように複製を作る
+                var currentMembers = new ArrayList<>(values);
+                currentMembers.add(other);
+                return new Members(currentMembers);
+            }
+        }
+        ```
+        
+        - Javaのコレクションは可変コレクションしかないので、上記のような回りくどい実装になります。vavrの依存関係が入っているのでそちらの不変コレクションを利用してもよいです。
+        
 - その場で解決できそうにない問題やリスクについては、赤い付箋でホットスポットとして表現しておく
 
 ## 成果物を共有する(達成=REQUIRED, 時間=15分=3分/チーム*5チーム)
