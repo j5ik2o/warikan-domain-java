@@ -116,7 +116,7 @@
             var secretaries = members.secretaries();
             // Membersクラス内部で計算させる
             // public Members secretaries() {
-            //     new Members(values.filter(Member::isSecretary).collect(Collectors.toList()));
+            //     return new Members(values.filter(Member::isSecretary).collect(Collectors.toList()));
             // }
             ```
             
