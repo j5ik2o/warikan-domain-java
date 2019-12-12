@@ -72,7 +72,7 @@
 
 - 本プロジェクトをひな型プロジェクトとして利用する。各チームでフォークしてください。
 - 概念モデルを実装に反映する
-    - 上記で決めた概念名を持つ、具体的な型(クラスでもインターフェイス)を定義する
+    - 上記で決めた概念名を持つ、具体的な型(クラス or 列挙型 or インターフェイス)を定義する
     - 型の責務を考える
     - プロパティだけではなく、メソッドも仮で定義する
     - プリミティブ型よりドメイン固有型を選択する    
@@ -87,22 +87,23 @@
     - 不変条件を表明する(型レベル、実行時レベル)
         - できてはいけないことを宣言する
         - メンバーの集合を決して空にできない場合。可能であれば(1)より(2)を選択する
-```java
-public class Members {
-  private final List<Member> values;
-  // (1)値の制約。違反した場合は実行時例外がスローされる
-  public Members(List<Member> values) {
-    Validate.notEmpty(values); // 違反すると例外スロー
-    this.values = new ArrayList<>(values);
-  }
-  // (2)型の制約。例外はない。コンパイルできないだけ
-  public Members(Member head, List<Member> tail) {
-    this.values = new ArrayList<>();
-    this.values.add(head);
-    this.values.addAll(tail);
-  }
-}
-```
+
+            ```java
+            public class Members {
+                private final List<Member> values;
+                // (1)値の制約。違反した場合は実行時例外がスローされる
+                public Members(List<Member> values) {
+                    Validate.notEmpty(values); // 違反すると例外スロー
+                    this.values = new ArrayList<>(values);
+                }
+                // (2)型の制約。例外はない。コンパイルできないだけ
+                public Members(Member head, List<Member> tail) {
+                    values = new ArrayList<>();
+                    values.add(head);
+                    values.addAll(tail);
+                }
+            }
+            ```
 
     - Tell Don't Ask(求めるな 命じよ)を厳守
         - ある処理をする際、その処理に必要な情報をオブジェクトから引き出さないで、情報を持ったオブジェクトに処理を命令すること
