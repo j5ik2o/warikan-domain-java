@@ -152,6 +152,8 @@
         public final Members {
             private List<Member> values;
             
+            // コンストラクタ省略
+            
             // 可変メソッド
             public Members add(Member other) {
                 // 可変リストなので相手に渡しても害がないように複製を作る
