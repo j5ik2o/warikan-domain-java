@@ -110,7 +110,7 @@
         
             ```java
             // 好ましくない例) 相手のオブジェクトから内部データを求めている
-            var secretaries = members.values().filter(Member::isSecretary).toList();
+            var secretaries = members.values().filter(Member::isSecretary).collect(Collectors.toList());
             // 好ましい例) 相手のオブジェクトに命令してください。
             var secretaries = members.secretaries();
             ```
