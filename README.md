@@ -114,6 +114,10 @@
             var secretaries = members.values().filter(Member::isSecretary).collect(Collectors.toList());
             // 好ましい例) 相手のオブジェクトに命令してください。
             var secretaries = members.secretaries();
+            // Membersクラス内部で計算させる
+            // public Members secretaries() {
+            //     new Members(values.filter(Member::isSecretary).collect(Collectors.toList()));
+            // }
             ```
             
 - その場で解決できそうにない問題やリスクについては、赤い付箋でホットスポットとして表現しておく
