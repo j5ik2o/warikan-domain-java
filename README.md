@@ -112,13 +112,37 @@
         
             ```java
             // 好ましくない例) 相手のオブジェクトから内部データを求めている
-            var secretaries = members.values().filter(Member::isSecretary).collect(Collectors.toList());
+            var secretaries = members.values().stream().filter(Member::isSecretary).collect(Collectors.toList());
             // 好ましい例) 相手のオブジェクトに命令してください。
             var secretaries = members.secretaries();
-            // Membersクラス内部で計算させる
-            // public Members secretaries() {
-            //     return new Members(values.filter(Member::isSecretary).collect(Collectors.toList()));
-            // }
+            ```
+            
+            ```java
+            // 好ましい例のMembersクラス
+            public final Members {
+                private final List<Member> values;
+                
+                public Members(Member head, Member... tail) {
+                    values = new ArrayList<>();
+                    values.add(head);
+                    values.addAll(Arrays.asList(tail));
+                }
+                
+                // 定義したとしてもドメインの計算文脈では利用しない(注意:I/O文脈では必要なることがある)
+                // public List<Member> values() {
+                //     return new ArrayList<>(values);
+                // }
+                
+                // Membersクラス内部で計算させる
+                public Optional<Members> secretaries() {
+                　　 var result = values.stream().filter(Member::isSecretary).collect(Collectors.toList())
+                    if (result.isEmpty()) {
+                      return Optional.empty();
+                    } else {
+                      return Optional.of(new Members(result));
+                    }
+                }
+            }
             ```
             
 - その場で解決できそうにない問題やリスクについては、赤い付箋でホットスポットとして表現しておく
