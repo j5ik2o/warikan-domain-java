@@ -106,7 +106,15 @@
 
     - Tell Don't Ask(求めるな 命じよ)を厳守
         - ある処理をする際、その処理に必要な情報をオブジェクトから引き出さないで、情報を持ったオブジェクトに処理を命令すること
-        - `var result = members.values().filter(Member::isSecretary).toList();`は内部データを求めている。そうではなく`var result = members.secretaries();`のようにオブジェクトに命じること
+        - 内部データを計算しないでそのまま返すようなメソッド(Getter)は作らない
+        
+            ```java
+            // 好ましくない例) 相手のオブジェクトから内部データを求めている
+            var secretaries = members.values().filter(Member::isSecretary).toList();
+            // 好ましい例) 相手のオブジェクトに命令してください。
+            var secretaries = members.secretaries();
+            ```
+            
 - その場で解決できそうにない問題やリスクについては、赤い付箋でホットスポットとして表現しておく
 
 ## 成果物を共有する(達成=REQUIRED, 時間=15分=3分/チーム*5チーム)
