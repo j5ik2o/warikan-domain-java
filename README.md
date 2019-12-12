@@ -76,7 +76,8 @@
     - 型の責務を考える
     - プロパティだけではなく、メソッドも仮で定義する
     - プリミティブ型よりドメイン固有型を選択する    
-    - 細かい実装は後回し。`return null;` or `throw new NotImplementedException();`などを使うとよい
+    - 細かい実装は後回し
+        - `TODO` or `FIXME` タグをつけて、`return null;` or `throw new NotImplementedException();`などを使うとよい
 - ビルドとJIGの利用
     - `$ ./gradlew build`でビルドできます。
     - `$ ./gradlew jigReports`で[JIG](https://github.com/dddjava/jig)のレポートを出力できます。
