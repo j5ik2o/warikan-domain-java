@@ -88,6 +88,7 @@ JDKを切り替えることができる[jabba](https://github.com/shyiko/jabba)�
     - プリミティブ型よりドメイン固有型を選択する    
     - 細かい実装は後回し
         - `TODO` or `FIXME` タグをつけて、`return null;` or `throw new NotImplementedException();`などを使うとよい
+    - テストを書くか書かないかはチームごとに決めてください
 - ビルドとJIGの利用
     - `$ ./gradlew build`でビルドできます。
     - `$ ./gradlew jigReports`で[JIG](https://github.com/dddjava/jig)のレポートを出力できます。
