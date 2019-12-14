@@ -72,6 +72,14 @@ JDKを切り替えることができる[jabba](https://github.com/shyiko/jabba)�
 ## ドメインオブジェクトを実装する(達成=RECOMMENDED, 時間=30分)
 
 - 本プロジェクトをひな型プロジェクトとして利用する。各チームでフォークしてください。
+    - [Moneyクラス](blob/master/src/main/java/warikan/domain/model/Money.java)だけがあります。お金の計算などに使ってください。
+    - ライブラリの依存関係(使うのは任意)
+        - commons-lang
+            - Apache Commonsの言語拡張用ライブラリ。表明プログラミングをする際は`Validate`を使うとよいです。
+        - vavr
+            - Immutableな関数型コレクションライブラリ
+        - JSR305
+            - Nonnullアノテーションが使えます
 - 概念モデルを実装に反映する
     - 上記で決めた概念名を持つ、具体的な型(クラス or 列挙型 or インターフェイス)を定義する
         - 区分は列挙型で定義しましょう
