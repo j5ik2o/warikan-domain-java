@@ -83,6 +83,9 @@ JDKを切り替えることができる[jabba](https://github.com/shyiko/jabba)�
 - ビルドとJIGの利用
     - `$ ./gradlew build`でビルドできます。
     - `$ ./gradlew jigReports`で[JIG](https://github.com/dddjava/jig)のレポートを出力できます。
+        - 区分値依存関係(build/jig/category-usage.svg)
+        - クラス依存関係(build/jig/business-rule-relation.svg)
+        - パッケージ依存関係(build/jig/package-relation-depth?.svg)
 
 ## ドメインオブジェクトを改善する(達成=OPTIONAL, 時間=45分)
 
