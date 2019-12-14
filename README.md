@@ -73,7 +73,7 @@ JDKを切り替えることができる[jabba](https://github.com/shyiko/jabba)�
 ## ドメインオブジェクトを実装する(達成=RECOMMENDED, 時間=30分)
 
 - 本プロジェクトをひな型プロジェクトとして利用する。各チームでフォークしてください。
-    - [Moneyクラス](src/main/java/warikan/domain/model/Money.java)だけがあります。お金の計算などに使ってください。
+    - [Moneyクラス](src/main/java/warikan/domain/model/Money.java)や[幹事区分](src/main/java/warikan/domain/model/members/SecretaryType.java)を用意しています。お金の計算などに使ってください。
     - ライブラリの依存関係(使うのは任意)
         - commons-lang
             - Apache Commonsの言語拡張用ライブラリ。表明プログラミングをする際は`Validate`を使うとよいです。
