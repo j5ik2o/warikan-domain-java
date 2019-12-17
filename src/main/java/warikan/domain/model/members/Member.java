@@ -60,7 +60,7 @@ public final class Member {
   }
 
   @Nonnull
-  SecretaryType secretaryType() {
+  public SecretaryType secretaryType() {
     return secretaryType;
   }
 
