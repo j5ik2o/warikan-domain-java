@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id "org.dddjava.jig-gradle-plugin" version "2019.12.1"
+    id "org.dddjava.jig-gradle-plugin" version "2019.12.2"
     id "com.diffplug.gradle.spotless" version "3.13.0"
 }
 
@@ -19,6 +19,9 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+
+    // https://mvnrepository.com/artifact/commons-collections/commons-collections
+    compile group: 'commons-collections', name: 'commons-collections', version: '3.2.2'
 
     // https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305
     compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'

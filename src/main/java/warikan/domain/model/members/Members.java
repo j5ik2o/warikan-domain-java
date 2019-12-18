@@ -1,10 +1,7 @@
 package warikan.domain.model.members;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import io.vavr.collection.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 import javax.annotation.Nonnull;
 import org.apache.commons.lang3.Validate;
 
@@ -13,27 +10,19 @@ public final class Members {
   private final List<Member> values;
 
   private Members(@Nonnull List<Member> values) {
-    Validate.notEmpty(values, "values are empty");
-    // validateSecretary(values);
-    this.values = new ArrayList<>(values);
-  }
-
-  private Members(@Nonnull Member head, @Nonnull List<Member> tail) {
-    List<Member> values = new ArrayList<>();
-    values.add(head);
-    values.addAll(tail);
-    // validateSecretary(values);
+    Validate.notEmpty(values.toJavaList(), "values are empty");
     this.values = values;
   }
 
-  private void validateSecretary(List<Member> values) {
-    if (values.stream().noneMatch(Member::isSecretary))
+  private Members(@Nonnull Member head, @Nonnull List<Member> tail) {
+    this.values = tail.prepend(head);
+    if (!this.values.exists(Member::isSecretary))
       throw new IllegalArgumentException("secretaries are empty");
   }
 
   @Nonnull
   public static Members of(@Nonnull Member head, @Nonnull Member... tail) {
-    return of(head, Arrays.asList(tail));
+    return of(head, List.of(tail));
   }
 
   @Nonnull
@@ -58,7 +47,7 @@ public final class Members {
    * @return 該当する場合true
    */
   public boolean exists(@Nonnull Predicate<Member> p) {
-    return values.stream().anyMatch(p);
+    return values.exists(p);
   }
 
   /**
@@ -90,8 +79,7 @@ public final class Members {
    * @return 要素数
    */
   public int sizeOfSecretaries() {
-    Long count = values.stream().filter(Member::isSecretary).count();
-    return Integer.parseInt(count.toString());
+    return values.count(Member::isSecretary);
   }
 
   /**
@@ -100,8 +88,7 @@ public final class Members {
    * @return 要素数
    */
   public int sizeOfNonSecretaries() {
-    Long count = values.stream().filter(Member::nonSecretary).count();
-    return Integer.parseInt(count.toString());
+    return values.count(Member::nonSecretary);
   }
 
   /**
@@ -111,7 +98,7 @@ public final class Members {
    */
   @Nonnull
   public Members secretaries() {
-    List<Member> members = values.stream().filter(Member::isSecretary).collect(Collectors.toList());
+    List<Member> members = values.filter(Member::isSecretary).toList();
     return new Members(members);
   }
 
@@ -122,8 +109,7 @@ public final class Members {
    */
   @Nonnull
   public Members nonSecretaries() {
-    List<Member> members =
-        values.stream().filter(Member::nonSecretary).collect(Collectors.toList());
+    List<Member> members = values.filter(Member::nonSecretary).toList();
     return new Members(members);
   }
 }
