@@ -1,5 +1,8 @@
 # 飲み会の割り勘ドメイン
 
+- [Scala版はこちら](https://github.com/j5ik2o/warikan-domain-scala)
+- [Rust版はこちら](https://github.com/j5ik2o/warikan-domain-rust)
+
 ## 成果物
 
 - チームで設計に合意すること
