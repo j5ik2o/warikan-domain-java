@@ -7,11 +7,9 @@ import org.junit.Test;
 public class WaikanTest {
   @Test
   public void 傾斜2対1対0_5で合計35000円() {
-    Nomikai nomikai = new Nomikai();
-
     Slope slope = new Slope(2, 0.5);
     NumberOfMembers numberOfMembers = new NumberOfMembers(1, 1, 1);
-    Warikan warikan = nomikai.calculate(35000, slope, numberOfMembers);
+    Warikan warikan = Warikan.create(35000, slope, numberOfMembers);
 
     assertEquals(warikan.large(), 20000);
     assertEquals(warikan.medium(), 10000);
@@ -20,11 +18,9 @@ public class WaikanTest {
 
   @Test
   public void 傾斜1_2対1対0_8で合計30000円() {
-    Nomikai nomikai = new Nomikai();
-
     Slope slope = new Slope(1.2, 0.8);
     NumberOfMembers numberOfMembers = new NumberOfMembers(1, 1, 1);
-    Warikan warikan = nomikai.calculate(30000, slope, numberOfMembers);
+    Warikan warikan = Warikan.create(30000, slope, numberOfMembers);
 
     assertEquals(warikan.large(), 12000);
     assertEquals(warikan.medium(), 10000);
@@ -33,11 +29,9 @@ public class WaikanTest {
 
   @Test
   public void 傾斜1_2対1対0_8で合計38000円() {
-    Nomikai nomikai = new Nomikai();
-
     Slope slope = new Slope(1.2, 0.8);
     NumberOfMembers numberOfMembers = new NumberOfMembers(1, 1, 2);
-    Warikan warikan = nomikai.calculate(38000, slope, numberOfMembers);
+    Warikan warikan = Warikan.create(38000, slope, numberOfMembers);
 
     assertEquals(warikan.large(), 12000);
     assertEquals(warikan.medium(), 10000);
