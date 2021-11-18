@@ -5,12 +5,12 @@ public class Slope {
   double mediumSlope;
   double smallSlope;
 
-  public Slope(double largeSlope, double mediumSlope, double smallSlope) {
-      if (largeSlope < mediumSlope || mediumSlope < smallSlope) {
-          throw new IllegalArgumentException("パラメータが不正です");
-      }
+  public Slope(double largeSlope, double smallSlope) {
+    mediumSlope = 1;
+    if (largeSlope < mediumSlope || mediumSlope < smallSlope) {
+      throw new IllegalArgumentException("パラメータが不正です");
+    }
     this.largeSlope = largeSlope;
-    this.mediumSlope = mediumSlope;
     this.smallSlope = smallSlope;
   }
 }
