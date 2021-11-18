@@ -9,7 +9,8 @@ public class WaikanTest {
   public void 傾斜2対1対0_5で合計35000円() {
     Nomikai nomikai = new Nomikai();
 
-    Warikan warikan = nomikai.calculate(35000, 2, 1, 0.5);
+    Slope slope = new Slope(2, 1, 0.5);
+    Warikan warikan = nomikai.calculate(35000, slope);
 
     assertEquals(warikan.large, 20000);
     assertEquals(warikan.medium, 10000);
@@ -20,7 +21,8 @@ public class WaikanTest {
   public void 傾斜1_2対1対0_8で合計30000円() {
     Nomikai nomikai = new Nomikai();
 
-    Warikan warikan = nomikai.calculate(30000, 1.2, 1, 0.8);
+    Slope slope = new Slope(1.2, 1, 0.8);
+    Warikan warikan = nomikai.calculate(30000, slope);
 
     assertEquals(warikan.large, 12000);
     assertEquals(warikan.medium, 10000);
