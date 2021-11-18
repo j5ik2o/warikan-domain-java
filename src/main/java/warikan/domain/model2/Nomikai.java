@@ -1,11 +1,8 @@
 package warikan.domain.model2;
 
 public class Nomikai {
-  public Warikan calculate(int totalBillingAmount) {
-    double largeSlope = 2;
-    double mediumSlope = 1;
-    double smallSlope = 0.5;
-
+  public Warikan calculate(
+      int totalBillingAmount, double largeSlope, double mediumSlope, double smallSlope) {
     int numberOfLarge = 1;
     int numberOfMedium = 1;
     int numberOfSmall = 1;
