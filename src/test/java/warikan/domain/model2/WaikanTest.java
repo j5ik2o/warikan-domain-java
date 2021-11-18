@@ -30,5 +30,17 @@ public class WaikanTest {
     assertEquals(warikan.medium(), 10000);
     assertEquals(warikan.small(), 8000);
   }
+
+  @Test
+  public void 傾斜1_2対1対0_8で合計38000円() {
+    Nomikai nomikai = new Nomikai();
+
+    Slope slope = new Slope(1.2, 0.8);
+    NumberOfMembers numberOfMembers = new NumberOfMembers(1, 1, 2);
+    Warikan warikan = nomikai.calculate(38000, slope, numberOfMembers);
+
+    assertEquals(warikan.large(), 12000);
+    assertEquals(warikan.medium(), 10000);
+    assertEquals(warikan.small(), 8000);
   }
 }
