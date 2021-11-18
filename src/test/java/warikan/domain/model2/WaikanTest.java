@@ -13,9 +13,9 @@ public class WaikanTest {
     NumberOfMembers numberOfMembers = new NumberOfMembers(1, 1, 1);
     Warikan warikan = nomikai.calculate(35000, slope, numberOfMembers);
 
-    assertEquals(warikan.large, 20000);
-    assertEquals(warikan.medium, 10000);
-    assertEquals(warikan.small, 5000);
+    assertEquals(warikan.large(), 20000);
+    assertEquals(warikan.medium(), 10000);
+    assertEquals(warikan.small(), 5000);
   }
 
   @Test
@@ -26,8 +26,9 @@ public class WaikanTest {
     NumberOfMembers numberOfMembers = new NumberOfMembers(1, 1, 1);
     Warikan warikan = nomikai.calculate(30000, slope, numberOfMembers);
 
-    assertEquals(warikan.large, 12000);
-    assertEquals(warikan.medium, 10000);
-    assertEquals(warikan.small, 8000);
+    assertEquals(warikan.large(), 12000);
+    assertEquals(warikan.medium(), 10000);
+    assertEquals(warikan.small(), 8000);
+  }
   }
 }

@@ -1,13 +1,23 @@
 package warikan.domain.model2;
 
 public class Warikan {
-  public int large;
   public int medium;
-  public int small;
+  private Slope slope;
 
-  public Warikan(int large, int medium, int small) {
-    this.large = large;
-    this.medium = medium;
-    this.small = small;
+  public Warikan(int totalBillingAmount, WeightedSum weightedSum, Slope slope) {
+    this.slope = slope;
+    this.medium = (int) (totalBillingAmount / weightedSum.toDouble());
+  }
+
+  public int large() {
+    return (int) (this.medium * slope.largeSlope);
+  }
+
+  public int medium() {
+    return medium;
+  }
+
+  public int small() {
+    return (int) (this.medium * slope.smallSlope);
   }
 }
