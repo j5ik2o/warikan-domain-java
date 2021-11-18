@@ -5,9 +5,9 @@ public class Warikan {
   public int medium;
   public int small;
 
-  public Warikan() {
-    large = 20000;
-    medium = 10000;
-    small = 5000;
+  public Warikan(int large, int medium, int small) {
+    this.large = large;
+    this.medium = medium;
+    this.small = small;
   }
 }
