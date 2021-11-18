@@ -10,7 +10,8 @@ public class WaikanTest {
     Nomikai nomikai = new Nomikai();
 
     Slope slope = new Slope(2, 0.5);
-    Warikan warikan = nomikai.calculate(35000, slope);
+    NumberOfMembers numberOfMembers = new NumberOfMembers(1, 1, 1);
+    Warikan warikan = nomikai.calculate(35000, slope, numberOfMembers);
 
     assertEquals(warikan.large, 20000);
     assertEquals(warikan.medium, 10000);
@@ -22,7 +23,8 @@ public class WaikanTest {
     Nomikai nomikai = new Nomikai();
 
     Slope slope = new Slope(1.2, 0.8);
-    Warikan warikan = nomikai.calculate(30000, slope);
+    NumberOfMembers numberOfMembers = new NumberOfMembers(1, 1, 1);
+    Warikan warikan = nomikai.calculate(30000, slope, numberOfMembers);
 
     assertEquals(warikan.large, 12000);
     assertEquals(warikan.medium, 10000);

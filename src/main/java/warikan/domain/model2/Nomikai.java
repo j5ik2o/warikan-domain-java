@@ -1,15 +1,11 @@
 package warikan.domain.model2;
 
 public class Nomikai {
-  public Warikan calculate(int totalBillingAmount, Slope slope) {
-    int numberOfLarge = 1;
-    int numberOfMedium = 1;
-    int numberOfSmall = 1;
-
+  public Warikan calculate(int totalBillingAmount, Slope slope, NumberOfMembers numberOfMembers) {
     double weightedSum =
-        slope.largeSlope * numberOfLarge
-            + slope.mediumSlope * numberOfMedium
-            + slope.smallSlope * numberOfSmall;
+        slope.largeSlope * numberOfMembers.large
+            + slope.mediumSlope * numberOfMembers.medium
+            + slope.smallSlope * numberOfMembers.small;
 
     int mediumPaymentAmount = (int) (totalBillingAmount / weightedSum);
     int largePaymentAmount = (int) (mediumPaymentAmount * slope.largeSlope);
