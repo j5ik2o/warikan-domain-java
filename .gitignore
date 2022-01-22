@@ -19,3 +19,11 @@ build/
 .idea/
 .gradle/
 spotlessJava
+
+# Ignore Gradle project-specific cache directory
+.vscode
+
+# Ignore Local Editor Settings
+.settings
+.classpath
+.project
