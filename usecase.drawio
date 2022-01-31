@@ -1,0 +1,61 @@
+<mxfile host="65bd71144e">
+    <diagram id="MNwxGO_azna5TINCiIHj" name="ページ1">
+        <mxGraphModel dx="1167" dy="1033" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="11" value="飲み会割り勘システム" style="rounded=0;whiteSpace=wrap;html=1;align=center;horizontal=1;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="40" width="310" height="960" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="幹事" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="200" width="70" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="開催した 飲み会 の 名前, 開催日時&#10; などを設定する" style="fontStyle=0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="100" width="230" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="開催した 飲み会 の 参加者 &#10;を追加/削除する" style="fontStyle=0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="220" width="230" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="開催した 飲み会 の &#10;支払区分 (多め,普通,少なめ)ごとに &#10;支払割合 を設定する" style="fontStyle=0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="340" width="230" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="開催した 飲み会 の 請求金額 を設定する" style="fontStyle=0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="460" width="230" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="飲み会 の 参加者ごとの&#10;支払金額 を計算する" style="fontStyle=0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="584.5" width="230" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="endArrow=none;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3" target="8">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="320" y="320" as="sourcePoint"/>
+                        <mxPoint x="370" y="270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="12">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="170" y="240" as="sourcePoint"/>
+                        <mxPoint x="280" y="155" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="" style="endArrow=none;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3" target="13">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="190" y="260" as="sourcePoint"/>
+                        <mxPoint x="290" y="165" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="14">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="170" y="240" as="sourcePoint"/>
+                        <mxPoint x="300" y="175" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="15">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="170" y="240" as="sourcePoint"/>
+                        <mxPoint x="310" y="185" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
