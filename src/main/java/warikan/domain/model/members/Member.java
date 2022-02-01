@@ -3,19 +3,16 @@ package warikan.domain.model.members;
 import java.util.Objects;
 import javax.annotation.Nonnull;
 
-import warikan.domain.model.Money;
-
 /** 参加者。 */
 public final class Member {
   private final MemberName name;
   private final PaymentRatio paymentRatio;
-  private final Money amount; // TODO: ここも支払金額用の値オブジェクトを作成。
+  private final Payment payment;
 
-  private Member(@Nonnull MemberName name,
-      @Nonnull PaymentRatio paymentRatio, @Nonnull Money amount ) {
+  private Member(@Nonnull MemberName name, @Nonnull PaymentRatio paymentRatio, @Nonnull Payment payment ) {
     this.name = name;
     this.paymentRatio = paymentRatio;
-    this.amount = amount;
+    this.payment = payment;
   }
 
   /**
@@ -26,21 +23,13 @@ public final class Member {
    * @return {@link Member}
    */
   @Nonnull
-  public static Member of(@Nonnull MemberName name,
-      @Nonnull PaymentRatio paymentRatio, @Nonnull Money amount) {
-    return new Member(name, paymentRatio, amount);
+  public static Member of(@Nonnull MemberName name, @Nonnull PaymentRatio paymentRatio, @Nonnull Payment payment) {
+    return new Member(name, paymentRatio, payment);
   }
 
-  /**
-   * ファクトリメソッド。
-   *
-   * @param name {@link MemberName}
-   * @return {@link Member}
-   */
-  // @Nonnull
-  // public static Member of(@Nonnull MemberName name) {
-  //   return new Member(name, SecretaryType.NonSecretary);
-  // }
+  public PaymentRatio paymentRatio() {
+    return this.paymentRatio;
+  }
 
   @Override
   public boolean equals(Object o) {
@@ -63,9 +52,5 @@ public final class Member {
   @Nonnull
   MemberName name() {
     return name;
-  }
-
-  public PaymentRatio paymentRatio() {
-    return this.paymentRatio;
   }
 }
