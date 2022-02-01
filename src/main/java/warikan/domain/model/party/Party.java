@@ -14,9 +14,9 @@ import warikan.domain.model.Money;
  */
 public class Party {
   private final PartyName partyName;
-  private final Money claimMoney; // TODO: 請求金額用の値オブジェクトを作成。その中でMoneyを使用
-  private final LocalDateTime dateTime;
-  private final int littleRatio; // TODO: 弱者控除割合用の値オブジェクトを作成。その中でMoneyを使用
+  private final TotalPayment totalPayment; // TODO: 請求金額用の値オブジェクトを作成。その中でMoneyを使用
+  private final PartyDatetime dateTime;
+  private final LittleRatio littleRatio; // TODO: 弱者控除割合用の値オブジェクトを作成。その中でMoneyを使用
 
   private Party(@Nonnull PartyName partyName, Money claimMoney, LocalDateTime dateTime, int littleRatio){
     this.partyName = partyName;

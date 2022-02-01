@@ -4,6 +4,7 @@ import java.util.Objects;
 
 import javax.annotation.Nonnull;
 
+/** 飲み会名 */
 public final class PartyName {
   private final String value;
 
