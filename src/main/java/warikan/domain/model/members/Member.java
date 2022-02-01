@@ -8,14 +8,12 @@ import warikan.domain.model.Money;
 /** 参加者。 */
 public final class Member {
   private final MemberName name;
-  private final SecretaryType secretaryType;
   private final PaymentRatio paymentRatio;
   private final Money amount; // TODO: ここも支払金額用の値オブジェクトを作成。
 
-  private Member(@Nonnull MemberName name, @Nonnull SecretaryType secretaryType,
+  private Member(@Nonnull MemberName name,
       @Nonnull PaymentRatio paymentRatio, @Nonnull Money amount ) {
     this.name = name;
-    this.secretaryType = secretaryType;
     this.paymentRatio = paymentRatio;
     this.amount = amount;
   }
@@ -28,9 +26,9 @@ public final class Member {
    * @return {@link Member}
    */
   @Nonnull
-  public static Member of(@Nonnull MemberName name, @Nonnull SecretaryType secretaryType,
+  public static Member of(@Nonnull MemberName name,
       @Nonnull PaymentRatio paymentRatio, @Nonnull Money amount) {
-    return new Member(name, secretaryType, paymentRatio, amount);
+    return new Member(name, paymentRatio, amount);
   }
 
   /**
@@ -49,17 +47,17 @@ public final class Member {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Member member = (Member) o;
-    return Objects.equals(name, member.name) && secretaryType == member.secretaryType;
+    return Objects.equals(name, member.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, secretaryType);
+    return Objects.hash(name);
   }
 
   @Override
   public String toString() {
-    return "Member{" + "name=" + name + ", secretaryType=" + secretaryType + '}';
+    return "Member{" + "name=" + name + '}';
   }
 
   @Nonnull
@@ -67,16 +65,7 @@ public final class Member {
     return name;
   }
 
-  @Nonnull
-  SecretaryType secretaryType() {
-    return secretaryType;
-  }
-
-  public boolean isSecretary() {
-    return secretaryType.equals(SecretaryType.Secretary);
-  }
-
-  public boolean nonSecretary() {
-    return !isSecretary();
+  public PaymentRatio paymentRatio() {
+    return this.paymentRatio;
   }
 }
