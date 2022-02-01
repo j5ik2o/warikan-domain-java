@@ -25,9 +25,6 @@ public class Party {
   private final PartyDatetime dateTime;
   private final LittleRatio littleRatio; // TODO: 弱者控除割合用の値オブジェクトを作成。その中でMoneyを使用
 
-  // 金額と区分の紐付け
-  private Map<PaymentRatio,Payment> paymentMap;
-
   private List<Member> members = new ArrayList<Member>();
 
   // メンバー追加
@@ -36,6 +33,9 @@ public class Party {
   }
 
   public void decidePayment(){
+
+    // 支払い区分と支払金額の対応
+    Map<PaymentRatio,Payment> paymentMap = new Map<PaymentRatio,Payment>;
 
     // 多めの人の人数
     long muchNum = this.members.stream().filter(member -> member.paymentRatio() == PaymentRatio.Much).count();
@@ -48,21 +48,23 @@ public class Party {
     
     // 平均金額を決定
     Payment averagePayment = totalPayment.devide(memberNum);
-    this.paymentMap.put(PaymentRatio.Mean, averagePayment);
+    paymentMap.put(PaymentRatio.Mean, averagePayment);
 
     // 弱者控除
     Payment littlePayment = averagePayment.devide(littleRatio);
-    this.paymentMap.put(PaymentRatio.Little, littlePayment);
+    paymentMap.put(PaymentRatio.Little, littlePayment);
 
     // 負担すべき差額計算
     Payment meanMembersTotalPayment = averagePayment.multiple(meanNum);
     Payment littleMembersTotalPayment = littlePayment.multiple(littleNum);
     Payment muchMembersTotalPayment = totalPayment.subtract(meanMembersTotalPayment).subtract(littleMembersTotalPayment);
     
-    // 多めの人の支払い金額を決定
+    // 多めの人の支払金額を決定
     Payment muchPayment = muchMembersTotalPayment.devide(muchNum);
-    this.paymentMap.put(PaymentRatio.Much,muchPayment);
+    paymentMap.put(PaymentRatio.Much,muchPayment);
 
+    // 各メンバーに支払金額を割り振る
+    this.members = this.members.stream().map(member -> member.setPayment(paymentMap.get(member.paymentRatio()))).toList();
   }
 
   // private Party(@Nonnull PartyName partyName, Money claimMoney, LocalDateTime dateTime, int littleRatio){
