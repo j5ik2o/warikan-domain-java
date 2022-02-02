@@ -5,8 +5,11 @@ import javax.annotation.Nonnull;
 
 /** 参加者。 */
 public final class Member {
+  /** 参加者名 */
   private final MemberName name;
+  /** 支払割合 */
   private final PaymentRatio paymentRatio;
+  /** 支払金額 */
   private final Payment payment;
 
   private Member(@Nonnull MemberName name, @Nonnull PaymentRatio paymentRatio, @Nonnull Payment payment ) {
@@ -19,16 +22,28 @@ public final class Member {
    * ファクトリメソッド。
    *
    * @param name {@link MemberName}
-   * @param secretaryType {@link SecretaryType}
+   * @param paymentRatio {@link PaymentRatio}
+   * @param payment {@link Payment}
    * @return {@link Member}
    */
   @Nonnull
   public static Member of(@Nonnull MemberName name, @Nonnull PaymentRatio paymentRatio, @Nonnull Payment payment) {
     return new Member(name, paymentRatio, payment);
   }
+  
+  @Nonnull
+  public MemberName name() {
+    return this.name;
+  }
 
+  @Nonnull
   public PaymentRatio paymentRatio() {
     return this.paymentRatio;
+  }
+
+  @Nonnull
+  public Payment payment() {
+    return this.payment;
   }
 
   @Override
@@ -49,8 +64,4 @@ public final class Member {
     return "Member{" + "name=" + name + '}';
   }
 
-  @Nonnull
-  MemberName name() {
-    return name;
-  }
 }
