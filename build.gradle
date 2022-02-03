@@ -14,6 +14,9 @@ repositories {
     jcenter()
 }
 
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
 dependencies {
     compile "io.vavr:vavr:0.9.3"
 
@@ -28,6 +31,8 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.29'
+
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
 
     // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
     testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
