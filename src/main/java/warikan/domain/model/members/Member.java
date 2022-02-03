@@ -31,16 +31,19 @@ public final class Member {
     return new Member(name, paymentRatio, payment);
   }
   
+  /** getter */
   @Nonnull
   public MemberName name() {
     return this.name;
   }
 
+  /** getter */
   @Nonnull
   public PaymentRatio paymentRatio() {
     return this.paymentRatio;
   }
 
+  /** getter */
   @Nonnull
   public Payment payment() {
     return this.payment;
