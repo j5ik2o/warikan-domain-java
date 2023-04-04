@@ -201,4 +201,4 @@ JDKを切り替えることができる[jabba](https://github.com/shyiko/jabba)�
     - ドメインモデルの選択と集中
     - 議論が白熱したホットスポット
 
-
+ソースコードのライセンスは[MIT](https://opensource.org/license/mit/)ですが、このREADME自体のライセンスは [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.ja) です。
